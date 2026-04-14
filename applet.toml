@@ -1,3 +1,8 @@
+[project]
+name = "JSON logger"
+version = "0.1.0"
+is_logger = true
+
 [python]
 dependencies=[
     "json-log-formatter",
