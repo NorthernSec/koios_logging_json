@@ -1,6 +1,10 @@
 [project]
 name = "JSON logger"
+description = "This logger logs using the JSON format, adding additional information to your logs in a structured format."
 version = "0.1.0"
+authors = [
+    "PidgeyL"
+]
 is_logger = true
 
 [python]
