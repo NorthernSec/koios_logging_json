@@ -7,8 +7,7 @@ class LoggingJsonConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name        = 'logging_json'
     applet_meta = {
-        "nav_label":    None,
-        "nav":          [],
+        "nav":          {},
         "url_slug":     "logging",
         "dependencies": {
             'extra_vars': {'LOGGING': LOGGING_CONF},
