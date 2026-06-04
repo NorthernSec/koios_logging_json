@@ -2,6 +2,7 @@
 name = "JSON logger"
 description = "This logger logs using the JSON format, adding additional information to your logs in a structured format."
 version = "0.1.0"
+folder = "logging_json"
 authors = [
     "PidgeyL"
 ]
