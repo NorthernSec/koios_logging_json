@@ -1,6 +1,10 @@
+import logging
 from django.apps import AppConfig
 
-from logging_json.logs import LOG_ROOT, LOGGING_CONF
+from logging_json.logs import LOG_ROOT, LOGGING_CONF, IgnoreHealthCheck
+
+# Removes health-check pings, unless they fail.
+logging.getLogger("django.server").addFilter(IgnoreHealthCheck())
 
 
 class LoggingJsonConfig(AppConfig):
@@ -10,8 +14,9 @@ class LoggingJsonConfig(AppConfig):
         "nav":          {},
         "url_slug":     "logging",
         "dependencies": {
-            'extra_vars': {'LOGGING': LOGGING_CONF},
-
+            'extra_vars': {
+                'LOGGING': LOGGING_CONF,
+            },
         }
     }
     LOG_ROOT.mkdir(parents=True, exist_ok=True)

@@ -5,6 +5,16 @@ from koios.config import Config
 LOG_ROOT  = Config().log_path
 LOG_LEVEL = Config().log_level
 
+
+class IgnoreHealthCheck:
+    def filter(self, record):
+        log = record.getMessage()
+        if "GET /_health" in log and "200" in log:
+            return False
+        else:
+            return True
+
+
 class JSONFormatter(json_log_formatter.JSONFormatter):
     def json_record(self, message, extra, record):
         extra.update(
