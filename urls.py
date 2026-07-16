@@ -1,5 +1,5 @@
-from django.urls import path
-from adviso      import views
+from django.urls  import path
+from logging_json import views
 
 app_name = 'logging_json'
 
